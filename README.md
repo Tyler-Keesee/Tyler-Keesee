@@ -4,7 +4,7 @@
 
 **Windows tools · Practical automation · Software that helps people**
 
-[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; · &nbsp; [Get in touch ↗](mailto:keeseetyler@yahoo.com)
+[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; · &nbsp; [Get in touch ↗](mailto:rescuepcrepairs@gmail.com)
 
 </div>
 
@@ -102,7 +102,7 @@ Updated 2026-11-14 (UTC).
 
 Interested in Windows tools, automation, or a project we could build together? I'd love to hear from you.
 
-**[Email](mailto:keeseetyler@yahoo.com)** · **[LinkedIn](https://www.linkedin.com/in/tyler-keesee-677baa326/)** · **[RescuePC](https://www.rescuepcrepairs.com/)**
+**[Email](mailto:rescuepcrepairs@gmail.com)** · **[LinkedIn](https://www.linkedin.com/in/tyler-keesee-677baa326/)** · **[RescuePC](https://www.rescuepcrepairs.com/)**
 
 ---
 
