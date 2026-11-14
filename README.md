@@ -69,7 +69,7 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 </tr>
 </table>
 
-[Browse all public repositories →](https://github.com/RescuePC?tab=repositories)
+[Browse all public repositories →](https://github.com/Tyler-Keesee?tab=repositories)
 
 ## My toolkit
 
@@ -89,7 +89,7 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 ## On GitHub
 
-[![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/RescuePC?tab=repositories)
+[![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/Tyler-Keesee?tab=repositories)
 
 <!-- STATS:START -->
 **50 public repositories · 47 original repositories · 56 stars on originals**  
