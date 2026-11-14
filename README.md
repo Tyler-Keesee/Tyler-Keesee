@@ -63,7 +63,7 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 **HTML · CSS · JavaScript**
 
-[Visit the portfolio ↗](https://rescuepc.github.io/Portfolio/) · [Repository ↗](https://github.com/RescuePC/Portfolio)
+[Repository ↗](https://github.com/RescuePC/Portfolio)
 
 </td>
 </tr>
