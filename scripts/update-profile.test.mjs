@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { fetchPublicRepos, summarize, updateReadme, renderSnapshot } from './update-profile.mjs';
+import { owner, fetchPublicRepos, summarize, updateReadme, renderSnapshot } from './update-profile.mjs';
 
-const repo = (overrides = {}) => ({ private: false, owner: { login: 'RescuePC' }, fork: false, stargazers_count: 3, ...overrides });
+const repo = (overrides = {}) => ({ private: false, owner: { login: owner }, fork: false, stargazers_count: 3, ...overrides });
 
 test('public counts exclude private and other owners; stars exclude forks', () => {
   const stats = summarize([repo(), repo({ fork: true, stargazers_count: 100 }), repo({ private: true }), repo({ owner: { login: 'other' } })], new Date('2026-10-20T00:00:00Z'));
@@ -19,6 +19,7 @@ test('fetches subsequent pages and stops after the partial page', async () => {
   });
   assert.equal(repos.length, 101);
   assert.equal(urls.length, 2);
+  assert.match(urls[0], new RegExp(`/users/${owner}/repos\\?`));
   assert.match(urls[1], /page=2$/);
   await assert.rejects(fetchPublicRepos(async () => ({ ok: false, status: 403 })), /403/);
   await assert.rejects(fetchPublicRepos(async () => ({ ok: true, json: async () => ({ message: 'error' }) })), /repository array/);

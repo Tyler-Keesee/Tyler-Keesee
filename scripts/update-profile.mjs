@@ -3,7 +3,8 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const owner = 'RescuePC';
+// GitHub Actions supplies the current owner, preventing future account renames from making counts stale.
+export const owner = process.env.GITHUB_REPOSITORY_OWNER || 'Tyler-Keesee';
 const start = '<!-- STATS:START -->';
 const end = '<!-- STATS:END -->';
 
@@ -12,7 +13,7 @@ export async function fetchPublicRepos(request = fetch) {
   const repos = [];
   for (let page = 1; ; page++) {
     const response = await request(`https://api.github.com/users/${owner}/repos?type=owner&per_page=100&page=${page}`, {
-      headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'RescuePC-profile',
+      headers: { Accept: 'application/vnd.github+json', 'User-Agent': `${owner}-profile`,
         'X-GitHub-Api-Version': '2022-11-28',
         ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}) },
       signal: AbortSignal.timeout(30_000),
@@ -45,7 +46,7 @@ export function updateReadme(readme, stats) {
 export function renderSnapshot(stats) {
   const metrics = [[48, stats.publicRepos, 'PUBLIC REPOSITORIES'], [370, stats.originals, 'ORIGINAL REPOSITORIES'], [692, stats.stars, 'STARS ON ORIGINALS']];
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="204" viewBox="0 0 1000 204" role="img" aria-labelledby="title desc">
-  <title id="title">RescuePC public GitHub snapshot</title>
+  <title id="title">${owner} public GitHub snapshot</title>
   <desc id="desc">${stats.publicRepos} public repositories, ${stats.originals} original repositories, ${stats.stars} stars on originals. Updated ${stats.date} UTC.</desc>
   <rect x="1" y="1" width="998" height="202" rx="16" fill="#0e1822" stroke="#29434c"/>
   <g font-family="Segoe UI,Arial,sans-serif">
