@@ -22,7 +22,7 @@ My work starts with a practical problem: a PC that needs troubleshooting, a repe
 <tr>
 <td width="50%" valign="top">
 
-### 🛠️ RescuePC Repairs
+### 🛠️ RescuePC
 
 Proprietary Windows repair software for diagnostics, driver management, security scanning, and system maintenance. The product behind my business; source code is private.
 
