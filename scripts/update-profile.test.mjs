@@ -75,3 +75,15 @@ test('language summary tracks original public repositories, not private data or 
   assert.throws(() => updateLanguages('without markers', stats), /language markers/);
   assert.doesNotMatch(changed, /Rust|TypeScript|JavaScript/);
 });
+
+test('featured work uses current project links and avoids obsolete portfolio cards', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const { fileURLToPath } = await import('node:url');
+  const readme = await readFile(fileURLToPath(new URL('../README.md', import.meta.url)), 'utf8');
+  assert.match(readme, /Electrical Engineering Learning Lab/);
+  assert.match(readme, /github.com\/Tyler-Keesee\/Electrical-Engineering/);
+  assert.doesNotMatch(readme, /github.com\/RescuePC\/|rescuepc-repairs.github.io\/Portfolio/);
+  assert.match(readme, /five minutes/);
+  assert.match(readme, /<!-- STATS:START -->/);
+  assert.match(readme, /<!-- LANGUAGES:START -->/);
+});
