@@ -4,7 +4,7 @@
 
 **Windows tools · Practical automation · Software that helps people**
 
-[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; / &nbsp; [Portfolio ↗](https://rescuepc.github.io/Portfolio/) &nbsp; / &nbsp; [Get in touch ↗](mailto:keeseetyler@yahoo.com)
+[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; / &nbsp; [Selected work ↗](#selected-work) &nbsp; / &nbsp; [GitHub ↗](https://github.com/Tyler-Keesee)
 
 </div>
 
@@ -39,7 +39,7 @@ A desktop hardware monitor for CPU, memory, GPU, storage, and network metrics, w
 
 **Python · PyQt6 · System monitoring**
 
-[Explore the code ↗](https://github.com/RescuePC/Hardware-Analyzer-Pro)
+[Explore the code ↗](https://github.com/Tyler-Keesee/Hardware-Analyzer-Pro)
 
 </td>
 </tr>
@@ -52,24 +52,24 @@ A browser-based Python learning environment with an editor, interactive console,
 
 **JavaScript · Brython · Learning tools**
 
-[Explore the code ↗](https://github.com/RescuePC/PyLearn-IDE)
+[Explore the code ↗](https://github.com/Tyler-Keesee/PyLearn-IDE)
 
 </td>
 <td width="50%" valign="top">
 
-### 🌐 Personal Portfolio
+### ⚙️ Engineering & Automation
 
-A home for my web apps, experiments, and learning projects, from budgeting tools to interactive games.
+A collection of developer tools, software experiments, and practical automation projects. Explore the code and see what I'm building and learning.
 
-**HTML · CSS · JavaScript**
+**Python · TypeScript · Go · PowerShell**
 
-[Visit the portfolio ↗](https://rescuepc.github.io/Portfolio/) · [Repository ↗](https://github.com/RescuePC/Portfolio)
+[Explore my repositories ↗](https://github.com/Tyler-Keesee?tab=repositories)
 
 </td>
 </tr>
 </table>
 
-[Browse all public repositories →](https://github.com/RescuePC?tab=repositories)
+[Browse all public repositories →](https://github.com/Tyler-Keesee?tab=repositories)
 
 ## My toolkit
 
@@ -89,7 +89,7 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 ## On GitHub
 
-[![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/RescuePC?tab=repositories)
+[![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/Tyler-Keesee?tab=repositories)
 
 <!-- STATS:START -->
 **50 public repositories · 47 original repositories · 56 stars on originals**  
@@ -98,11 +98,11 @@ Updated 2026-11-14 (UTC).
 
 <sub>Daily snapshot from GitHub's public API. Stars are counted across original public repositories; forks are excluded from that total. The date above shows the last successful refresh. [How it updates](docs/profile-maintenance.md).</sub>
 
-## Let's connect
+## Professional links
 
-Interested in Windows tools, automation, or a project we could build together? I'd love to hear from you.
+Interested in the projects or software featured here? Explore the source repositories or visit RescuePC for product information.
 
-**[Email](mailto:keeseetyler@yahoo.com)** · **[LinkedIn](https://www.linkedin.com/in/tyler-keesee-677baa326/)** · **[RescuePC](https://www.rescuepcrepairs.com/)** · **[Portfolio](https://rescuepc.github.io/Portfolio/)**
+**[GitHub repositories](https://github.com/Tyler-Keesee?tab=repositories)** · **[RescuePC](https://www.rescuepcrepairs.com/)****
 
 ---
 
