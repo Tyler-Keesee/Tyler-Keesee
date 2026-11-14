@@ -7,7 +7,7 @@ The profile uses standard GitHub Markdown and two repository-owned SVGs. Its mai
 - Update the introduction, projects, toolkit, and contact links in `README.md`.
 - Edit `assets/header.svg` to change the banner. Keep its title and description meaningful.
 - Keep project descriptions concise and link only to public repositories.
-- Preserve the `STATS:START` and `STATS:END` comments. The updater replaces only the text between them and `assets/github-snapshot.svg`.
+- Preserve the `STATS:START`/`STATS:END` and `LANGUAGES:START`/`LANGUAGES:END` comments. The updater replaces the statistics block, the language summary block, and `assets/github-snapshot.svg`. The curated skill table remains manually maintained; the detected language summary is a count of GitHub primary-language metadata from original public repositories, not a proficiency assessment.
 
 ## Public snapshot
 

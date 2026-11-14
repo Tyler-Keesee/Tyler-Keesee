@@ -82,6 +82,14 @@ These are technologies used in my public work and current projects, not a claim 
 | Development workflow | Git, GitHub, VS Code, Vercel |
 | Studying and improving | Computer Science fundamentals, software reliability, security practices |
 
+### Automatically detected repository languages
+
+<!-- LANGUAGES:START -->
+Refreshing automatically.
+<!-- LANGUAGES:END -->
+
+<sub>GitHub's primary-language metadata for original public repositories, not a measure of proficiency or an exhaustive list of technologies.</sub>
+
 ## What drives me
 
 - **Useful tools.** Build around real troubleshooting and workflow problems.

@@ -7,6 +7,8 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 export const owner = process.env.GITHUB_REPOSITORY_OWNER || 'Tyler-Keesee';
 const start = '<!-- STATS:START -->';
 const end = '<!-- STATS:END -->';
+const languagesStart = '<!-- LANGUAGES:START -->';
+const languagesEnd = '<!-- LANGUAGES:END -->';
 
 // Use the public /users endpoint, never the authenticated /user/repos endpoint.
 export async function fetchPublicRepos(request = fetch) {
@@ -53,8 +55,15 @@ export function summarize(repos, starredRepos = [], date = new Date()) {
   const originals = publicRepos.filter(repo => !repo.fork);
   if (!publicRepos.length) throw new Error('No public repositories received; keeping the previous snapshot.');
   if (!Array.isArray(starredRepos)) throw new Error('Starred repository data unavailable; keeping the previous snapshot.');
+  const counts = new Map();
+  for (const repo of originals) {
+    const language = typeof repo.language === 'string' ? repo.language.trim() : '';
+    if (language) counts.set(language, (counts.get(language) || 0) + 1);
+  }
+  const languages = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 8);
   return { publicRepos: publicRepos.length, originals: originals.length,
     starred: starredRepos.length,
+    languages,
     starsReceived: originals.reduce((sum, repo) => sum + (repo.stargazers_count ?? 0), 0),
     date: date.toISOString().slice(0, 10) };
 }
@@ -65,6 +74,24 @@ export function updateReadme(readme, stats) {
   }
   const text = `**${stats.publicRepos} public repositories · ${stats.starred} repositories starred · ${stats.starsReceived} stars received**  \nUpdated ${stats.date} (UTC).`;
   return readme.slice(0, readme.indexOf(start) + start.length) + `\n${text}\n` + readme.slice(readme.indexOf(end));
+}
+
+
+export function updateLanguages(readme, stats) {
+  if (readme.split(languagesStart).length !== 2 ||
+      readme.split(languagesEnd).length !== 2 ||
+      readme.indexOf(languagesStart) > readme.indexOf(languagesEnd)) {
+    throw new Error('README must contain one ordered pair of language markers.');
+  }
+  const summary = stats.languages.length
+    ? stats.languages.map(([name, count]) => {
+        // GitHub metadata is externally supplied; escape formatting characters.
+        const safe = name.replace(/[<>&|*_\[\]\n\r]/g, '');
+        return `${safe} (${count})`;
+      }).join(' · ')
+    : 'No primary languages detected in original public repositories.';
+  return readme.slice(0, readme.indexOf(languagesStart) + languagesStart.length) +
+    `\n${summary}\n` + readme.slice(readme.indexOf(languagesEnd));
 }
 
 export function renderSnapshot(stats) {
@@ -85,7 +112,7 @@ export function renderSnapshot(stats) {
 export async function updateProfile(repos, starredRepos) {
   const stats = summarize(repos, starredRepos);
   const readmePath = resolve(root, 'README.md');
-  const readme = updateReadme(await readFile(readmePath, 'utf8'), stats);
+  const readme = updateLanguages(updateReadme(await readFile(readmePath, 'utf8'), stats), stats);
   const svg = renderSnapshot(stats);
   // Fetch and validate everything before writing; API failures preserve the last success.
   await writeFile(resolve(root, 'assets/github-snapshot.svg'), svg);

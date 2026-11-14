@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { owner, fetchPublicRepos, fetchStarredRepos, summarize, updateReadme, renderSnapshot } from './update-profile.mjs';
+import { owner, fetchPublicRepos, fetchStarredRepos, summarize, updateReadme, updateLanguages, renderSnapshot } from './update-profile.mjs';
 
 const repo = (overrides = {}) => ({ private: false, owner: { login: owner }, fork: false, stargazers_count: 3, ...overrides });
 
 test('public counts exclude private and other owners; stars exclude forks', () => {
   const stats = summarize([repo(), repo({ fork: true, stargazers_count: 100 }), repo({ private: true }), repo({ owner: { login: 'other' } })], [{ id: 11 }, { id: 12 }], new Date('2026-10-20T00:00:00Z'));
-  assert.deepEqual(stats, { publicRepos: 2, originals: 1, starred: 2, starsReceived: 3, date: '2026-10-20' });
+  assert.deepEqual(stats, { publicRepos: 2, originals: 1, starred: 2, languages: [], starsReceived: 3, date: '2026-10-20' });
   assert.match(renderSnapshot(stats), /2 public repositories, 2 repositories starred, 3 stars received/);
   assert.throws(() => summarize([]), /No public repositories/);
 });
@@ -55,4 +55,23 @@ test('starred repository count follows GitHub public starred pagination', async 
   await assert.rejects(fetchStarredRepos(async () => ({ ok: false, status: 403 })), /403/);
   await assert.rejects(fetchStarredRepos(async () => ({ ok: true, json: async () => ({ error: 'bad data' }) })), /starred repository array/);
   assert.throws(() => summarize([repo()], null), /Starred repository data unavailable/);
+});
+
+
+test('language summary tracks original public repositories, not private data or forks', () => {
+  const stats = summarize([
+    repo({ language: 'Python' }),
+    repo({ language: 'Python' }),
+    repo({ language: 'Go' }),
+    repo({ language: 'Rust', fork: true }),
+    repo({ language: 'TypeScript', private: true }),
+    repo({ language: 'JavaScript', owner: { login: 'other' } }),
+  ], []);
+  assert.deepEqual(stats.languages, [['Python', 2], ['Go', 1]]);
+  const before = 'Before\n<!-- LANGUAGES:START -->\nold\n<!-- LANGUAGES:END -->\nAfter';
+  const changed = updateLanguages(before, stats);
+  assert.match(changed, /Python \(2\) · Go \(1\)/);
+  assert.equal(updateLanguages(changed, stats), changed);
+  assert.throws(() => updateLanguages('without markers', stats), /language markers/);
+  assert.doesNotMatch(changed, /Rust|TypeScript|JavaScript/);
 });
