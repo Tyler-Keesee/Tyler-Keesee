@@ -4,7 +4,7 @@
 
 **Windows tools · Practical automation · Software that helps people**
 
-[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; · &nbsp; [Get in touch](#lets-connect)
+[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; · &nbsp; [Get in touch ↗]([Email](mailto:keeseetyler@yahoo.com))
 
 </div>
 
