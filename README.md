@@ -10,7 +10,7 @@
 
 ## Hey, I'm Tyler.
 
-I'm a developer, Computer Science student, and the founder of [RescuePC ↗](https://www.rescuepcrepairs.com/),  I build tools to make everyday technology easier to understand, maintain, and use.
+I work in IT and a Computer Science student, also the founder of [RescuePC ↗](https://www.rescuepcrepairs.com/),  I build tools to make everyday technology easier to understand, maintain, and use.
 
 My work starts with a practical problem: a PC that needs troubleshooting, a repetitive task that takes too long, or a concept that could be easier to learn. I like turning those problems into software people can actually use.
 
