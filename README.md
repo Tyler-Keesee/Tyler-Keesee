@@ -104,8 +104,6 @@ Interested in Windows tools, automation, or a project we could build together? I
 
 **[Email](mailto:keeseetyler@yahoo.com)** · **[LinkedIn](https://www.linkedin.com/in/tyler-keesee-677baa326/)** · **[RescuePC](https://www.rescuepcrepairs.com/)** · **[Portfolio](https://rescuepc.github.io/Portfolio/)**
 
-[YouTube](https://www.youtube.com/@RescuePCOfficial) · [X](https://x.com/RescuePCRepair) · [TikTok](https://www.tiktok.com/@rescuepcofficial)
-
 ---
 
 <div align="center">
