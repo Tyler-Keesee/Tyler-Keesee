@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fetchPublicRepos, summarize, updateReadme, renderSnapshot } from './update-profile.mjs';
 
-const repo = (overrides = {}) => ({ private: false, owner: { login: 'RescuePC' }, fork: false, stargazers_count: 3, ...overrides });
+const repo = (overrides = {}) => ({ private: false, owner: { login: 'Tyler-Keesee' }, fork: false, stargazers_count: 3, ...overrides });
 
 test('public counts exclude private and other owners; stars exclude forks', () => {
   const stats = summarize([repo(), repo({ fork: true, stargazers_count: 100 }), repo({ private: true }), repo({ owner: { login: 'other' } })], new Date('2026-10-20T00:00:00Z'));
