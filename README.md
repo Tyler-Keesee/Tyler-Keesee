@@ -57,13 +57,13 @@ A browser-based Python learning environment with an editor, interactive console,
 </td>
 <td width="50%" valign="top">
 
-### 🌐 Personal Portfolio
+### ⚡ Electrical Engineering Learning Lab
 
-A home for my web apps, experiments, and learning projects, from budgeting tools to interactive games.
+A browser-based collection of circuit-analysis resources, tutorials, virtual-lab links, and a tested resource search.
 
-**HTML · CSS · JavaScript**
+**JavaScript · HTML/CSS · CI tests**
 
-[Repository ↗](https://github.com/Tyler-Keesee/Portfolio)
+[Explore the code ↗](https://github.com/Tyler-Keesee/Electrical-Engineering)
 
 </td>
 </tr>
@@ -73,12 +73,12 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 ## My toolkit
 
-These are technologies used in my public work and current projects, not a claim of expertise in every listed area.
+These technologies appear in my projects or development workflow. This is not a claim of mastery, and projects marked as experiments are not production certifications.
 
 | Area | Languages & tools |
 | :--- | :--- |
 | Languages represented in projects | Python, JavaScript, TypeScript, Go, PowerShell |
-| Interfaces & frameworks | PyQt6, SvelteKit, HTML, CSS |
+| Interfaces & UI | PyQt6, browser-based interfaces, HTML, CSS |
 | Development workflow | Git, GitHub, VS Code, Vercel |
 | Studying and improving | Computer Science fundamentals, software reliability, security practices |
 
@@ -106,7 +106,7 @@ JavaScript (8) · Python (6) · CSS (5) · Go (2) · TypeScript (2) · Svelte (1
 Updated 2026-11-14 (UTC).
 <!-- STATS:END -->
 
-<sub>Daily snapshot from GitHub's public API. Stars are counted across original public repositories; forks are excluded from that total. The date above shows the last successful refresh. [How it updates](docs/profile-maintenance.md).</sub>
+<sub>Public GitHub API snapshot, scheduled to refresh approximately every five minutes (GitHub may delay runs). Repository totals exclude private repositories; stars received are summed across original public repositories, excluding forks. The date shows the last successful refresh. [How it updates](docs/profile-maintenance.md).</sub>
 
 ## Let's connect
 
