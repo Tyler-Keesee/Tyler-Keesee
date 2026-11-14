@@ -11,9 +11,9 @@ The profile uses standard GitHub Markdown and two repository-owned SVGs. Its mai
 
 ## Public snapshot
 
-The workflow runs daily at 09:23 UTC, can be triggered manually from Actions, and runs after changes to its script or workflow land on `main`. Scheduled runs may be delayed by GitHub. GitHub can disable scheduled workflows after 60 days without repository activity; re-enable the workflow in Actions if necessary.
+The workflow is scheduled every five minutes (at minutes 07, 12, etc. UTC), can be triggered manually from Actions, and runs after changes to its script or workflow land on `main`. GitHub may delay or omit some scheduled runs; creation/deletion of another repository does not directly dispatch an event to this workflow. No realtime guarantee is implied. Scheduled runs may be delayed by GitHub. GitHub can disable scheduled workflows after 60 days without repository activity; re-enable the workflow in Actions if necessary.
 
-It uses `GET /users/<account-owner>/repos` (the workflow reads `GITHUB_REPOSITORY_OWNER`; local runs default to `Tyler-Keesee`) with pagination to count public repositories, original public repositories (excluding forks), and stars on those originals. Empty or archived public repositories are included. It does not count private repositories, private contributions, commit totals, WakaTime hours, or a coding streak.
+It uses `GET /users/<account-owner>/repos` (the workflow reads `GITHUB_REPOSITORY_OWNER`; local runs default to `Tyler-Keesee`) with pagination to count public repositories, original public repositories (excluding forks), and stars received on original public repositories. It also calls `GET /users/<account-owner>/starred` with pagination for the number of repositories starred by the account. Empty or archived public repositories are included. The profile reports public repository count, starred-by-user count, and stars received, **not the signed-in GitHub total repository count (which includes private repositories)**. Private repository names and private counts require additional user-scoped authorization, intentionally not used here. It does not count private contributions, commit totals, WakaTime hours, or a coding streak.
 
 The workflow uses GitHub's built-in `GITHUB_TOKEN`; no personal access token or extra secrets are needed. The refresh job needs repository contents write permission to commit the two generated files. Pull requests run tests with read-only permissions and never refresh or push. Protected branches may require adapting the commit step to your repository rules.
 
@@ -28,10 +28,10 @@ node --test scripts/update-profile.test.mjs
 node scripts/update-profile.mjs
 ```
 
-For an offline refresh from a saved public GitHub API response:
+For an offline refresh, provide a JSON object with `repos` and `starredRepos` arrays (both from GitHub public endpoints):
 
 ```sh
-node scripts/update-profile.mjs --from-json /path/to/public-repos.json
+node scripts/update-profile.mjs --from-json /path/to/snapshot.json
 ```
 
 Preview `README.md` in GitHub before merging. On a profile, GitHub serves relative images from this repository. All key information is also written as text, including the stats, so images are optional for understanding the profile.

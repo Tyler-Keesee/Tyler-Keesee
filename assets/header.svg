@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
-  <title id="title">Tyler Keesee | Developer and RescuePC founder</title>
+  <title id="title">Tyler Keesee | IT, Computer Science and software automation</title>
   <desc id="desc">Building useful software, one real problem at a time. A dark teal terminal-inspired banner with a circuit motif.</desc>
   <defs>
     <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101e29"/><stop offset="1" stop-color="#0b111a"/></linearGradient>
@@ -14,11 +14,11 @@
   <text x="820" y="169" text-anchor="middle" font-family="Consolas,monospace" font-size="38" font-weight="700" fill="#77e9d0">&gt;_</text>
   <g font-family="Segoe UI,Arial,sans-serif">
     <circle cx="49" cy="43" r="5" fill="#00d4aa"/>
-    <text x="66" y="48" fill="#94b5bd" font-size="13" letter-spacing="2">RESCUEPC / DEVELOPER PROFILE</text>
+    <text x="66" y="48" fill="#94b5bd" font-size="13" letter-spacing="2">IT / COMPUTER SCIENCE / SOFTWARE</text>
     <text x="44" y="130" fill="#f0f6fc" font-size="58" font-weight="700" letter-spacing="-2">Tyler Keesee<tspan fill="#00d4aa">.</tspan></text>
     <text x="48" y="178" fill="#77e9d0" font-size="26" font-weight="600">Building useful software.</text>
     <text x="48" y="213" fill="#b4c6d0" font-size="20">One real problem at a time.</text>
-    <text x="48" y="277" fill="#94b5bd" font-size="14" letter-spacing="1">DEVELOPER &amp; FOUNDER <tspan fill="#46616b"> / </tspan> NEW YORK</text>
+    <text x="48" y="277" fill="#94b5bd" font-size="14" letter-spacing="1">IT &amp; AUTOMATION <tspan fill="#46616b"> / </tspan> RESCUEPC FOUNDER</text>
   </g>
   <rect x="48" y="240" width="64" height="3" rx="1.5" fill="url(#accent)"/>
 </svg>

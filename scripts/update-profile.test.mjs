@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { owner, fetchPublicRepos, summarize, updateReadme, renderSnapshot } from './update-profile.mjs';
+import { owner, fetchPublicRepos, fetchStarredRepos, summarize, updateReadme, renderSnapshot } from './update-profile.mjs';
 
 const repo = (overrides = {}) => ({ private: false, owner: { login: owner }, fork: false, stargazers_count: 3, ...overrides });
 
 test('public counts exclude private and other owners; stars exclude forks', () => {
-  const stats = summarize([repo(), repo({ fork: true, stargazers_count: 100 }), repo({ private: true }), repo({ owner: { login: 'other' } })], new Date('2026-10-20T00:00:00Z'));
-  assert.deepEqual(stats, { publicRepos: 2, originals: 1, stars: 3, date: '2026-10-20' });
-  assert.match(renderSnapshot(stats), /2 public repositories, 1 original repositories, 3 stars/);
+  const stats = summarize([repo(), repo({ fork: true, stargazers_count: 100 }), repo({ private: true }), repo({ owner: { login: 'other' } })], [{ id: 11 }, { id: 12 }], new Date('2026-10-20T00:00:00Z'));
+  assert.deepEqual(stats, { publicRepos: 2, originals: 1, starred: 2, starsReceived: 3, date: '2026-10-20' });
+  assert.match(renderSnapshot(stats), /2 public repositories, 2 repositories starred, 3 stars received/);
   assert.throws(() => summarize([]), /No public repositories/);
 });
 
@@ -26,14 +26,33 @@ test('fetches subsequent pages and stops after the partial page', async () => {
 });
 
 test('replaces only the stats block and rejects malformed markers', () => {
-  const stats = summarize([repo()]);
+  const stats = summarize([repo()], []);
   const input = 'Before\n<!-- STATS:START -->\nold\n<!-- STATS:END -->\nAfter';
   const output = updateReadme(input, stats);
   assert.ok(output.startsWith('Before\n<!-- STATS:START -->'));
   assert.ok(output.endsWith('<!-- STATS:END -->\nAfter'));
-  assert.match(output, /1 public repositories/);
+  assert.match(output, /1 public repositories · 0 repositories starred/);
   assert.equal(updateReadme(output, stats), output);
   for (const invalid of ['', '<!-- STATS:END --><!-- STATS:START -->', input + '<!-- STATS:START -->']) {
     assert.throws(() => updateReadme(invalid, stats), /stats markers/);
   }
+});
+
+
+test('starred repository count follows GitHub public starred pagination', async () => {
+  const urls = [];
+  const entries = await fetchStarredRepos(async url => {
+    urls.push(url);
+    return { ok: true, json: async () => urls.length === 1
+      ? Array.from({ length: 100 }, (_, id) => ({ id }))
+      : [{ id: 101 }] };
+  });
+  assert.equal(entries.length, 101);
+  assert.match(urls[0], new RegExp(`/users/${owner}/starred\\\\?`));
+  assert.equal(urls.length, 2);
+  const s = summarize([repo()], entries);
+  assert.equal(s.starred, 101);
+  await assert.rejects(fetchStarredRepos(async () => ({ ok: false, status: 403 })), /403/);
+  await assert.rejects(fetchStarredRepos(async () => ({ ok: true, json: async () => ({ error: 'bad data' }) })), /starred repository array/);
+  assert.throws(() => summarize([repo()], null), /Starred repository data unavailable/);
 });

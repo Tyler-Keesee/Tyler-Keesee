@@ -2,7 +2,7 @@ name: Refresh public profile snapshot
 
 on:
   schedule:
-    - cron: '23 9 * * *'
+    - cron: '7-57/5 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
