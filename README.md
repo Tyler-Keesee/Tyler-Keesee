@@ -73,12 +73,14 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 ## My toolkit
 
+These are technologies used in my public work and current projects, not a claim of expertise in every listed area.
+
 | Area | Languages & tools |
 | :--- | :--- |
-| Desktop & automation | Python, PowerShell, Windows, PyQt6 |
-| Web | JavaScript, TypeScript, HTML, CSS |
-| Development | Git, GitHub, VS Code, Vercel |
-| Exploring & learning | C, C++, Java, Linux, computer science fundamentals |
+| Languages represented in projects | Python, JavaScript, TypeScript, Go, PowerShell |
+| Interfaces & frameworks | PyQt6, SvelteKit, HTML, CSS |
+| Development workflow | Git, GitHub, VS Code, Vercel |
+| Studying and improving | Computer Science fundamentals, software reliability, security practices |
 
 ## What drives me
 
