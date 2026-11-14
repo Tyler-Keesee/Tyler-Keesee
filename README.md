@@ -85,7 +85,7 @@ These are technologies used in my public work and current projects, not a claim 
 ### Automatically detected repository languages
 
 <!-- LANGUAGES:START -->
-Refreshing automatically.
+JavaScript (8) · Python (6) · CSS (5) · Go (2) · TypeScript (2) · Svelte (1)
 <!-- LANGUAGES:END -->
 
 <sub>GitHub's primary-language metadata for original public repositories, not a measure of proficiency or an exhaustive list of technologies.</sub>
