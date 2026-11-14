@@ -4,13 +4,13 @@
 
 **Windows tools · Practical automation · Software that helps people**
 
-[RescuePC ↗](https://www.rescuepcrepairs.com/)&nbsp; &nbsp;[Get in touch ↗](mailto:keeseetyler@yahoo.com)
+[RescuePC ↗](https://www.rescuepcrepairs.com/) &nbsp; · &nbsp; [Get in touch](#lets-connect)
 
 </div>
 
 ## Hey, I'm Tyler.
 
-I work in IT and a Computer Science student, also the founder of [RescuePC ↗](https://www.rescuepcrepairs.com/),  I build tools to make everyday technology easier to understand, maintain, and use.
+I work in IT, study Computer Science, and founded [RescuePC](https://www.rescuepcrepairs.com/). I build practical software that makes everyday technology easier to troubleshoot, maintain, and use.
 
 My work starts with a practical problem: a PC that needs troubleshooting, a repetitive task that takes too long, or a concept that could be easier to learn. I like turning those problems into software people can actually use.
 
@@ -39,7 +39,7 @@ A desktop hardware monitor for CPU, memory, GPU, storage, and network metrics, w
 
 **Python · PyQt6 · System monitoring**
 
-[Explore the code ↗](https://github.com/RescuePC/Hardware-Analyzer-Pro)
+[Explore the code ↗](https://github.com/Tyler-Keesee/Hardware-Analyzer-Pro)
 
 </td>
 </tr>
@@ -52,7 +52,7 @@ A browser-based Python learning environment with an editor, interactive console,
 
 **JavaScript · Brython · Learning tools**
 
-[Explore the code ↗](https://github.com/RescuePC/PyLearn-IDE)
+[Explore the code ↗](https://github.com/Tyler-Keesee/PyLearn-IDE)
 
 </td>
 <td width="50%" valign="top">
@@ -63,13 +63,13 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 **HTML · CSS · JavaScript**
 
-[Repository ↗](https://github.com/RescuePC/Portfolio)
+[Repository ↗](https://github.com/Tyler-Keesee/Portfolio)
 
 </td>
 </tr>
 </table>
 
-[Browse all public repositories →](https://github.com/RescuePC?tab=repositories)
+[Browse all public repositories →](https://github.com/Tyler-Keesee?tab=repositories)
 
 ## My toolkit
 
@@ -89,7 +89,7 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 
 ## On GitHub
 
-[![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/RescuePC?tab=repositories)
+[![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/Tyler-Keesee?tab=repositories)
 
 <!-- STATS:START -->
 **50 public repositories · 47 original repositories · 56 stars on originals**  
@@ -102,7 +102,7 @@ Updated 2026-11-14 (UTC).
 
 Interested in Windows tools, automation, or a project we could build together? I'd love to hear from you.
 
-**[Email](mailto:keeseetyler@yahoo.com)** · **[LinkedIn](https://www.linkedin.com/in/tyler-keesee-677baa326/)** · **[RescuePC](https://www.rescuepcrepairs.com/)** · **[Portfolio](https://rescuepc.github.io/Portfolio/)**
+**[Email](mailto:keeseetyler@yahoo.com)** · **[LinkedIn](https://www.linkedin.com/in/tyler-keesee-677baa326/)** · **[RescuePC](https://www.rescuepcrepairs.com/)**
 
 ---
 
