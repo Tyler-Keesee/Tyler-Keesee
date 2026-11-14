@@ -92,7 +92,7 @@ A home for my web apps, experiments, and learning projects, from budgeting tools
 [![Public GitHub repository snapshot](assets/github-snapshot.svg)](https://github.com/Tyler-Keesee?tab=repositories)
 
 <!-- STATS:START -->
-**50 public repositories · 47 original repositories · 56 stars on originals**  
+**38 public repositories · 36 original repositories · 44 stars on originals**  
 Updated 2026-11-14 (UTC).
 <!-- STATS:END -->
 
