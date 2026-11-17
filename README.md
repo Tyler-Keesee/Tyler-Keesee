@@ -50,7 +50,7 @@ A desktop hardware monitor for CPU, memory, GPU, storage, and network metrics, w
 
 A browser-based Python learning environment with an editor, interactive console, and visual tools for exploring programming concepts.
 
-**JavaScript · Brython · Learning tools**
+**JavaScript · Python · Learning tools**
 
 [Explore the code ↗](https://github.com/Tyler-Keesee/PyLearn-IDE)
 
